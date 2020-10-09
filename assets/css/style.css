@@ -12,7 +12,7 @@
 header {
   background-color: var(--darkgrey);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 8px;
+  padding: 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -20,8 +20,8 @@ header {
 a h1 {
   color: white;
   display: inline-block;
-  margin-left: 25px;
-  font-size: 1.65rem;
+  margin-left: 20px;
+  font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 0;
 }
@@ -31,16 +31,29 @@ h1 span {
 h1::after {
   content: " ";
   display: block;
-  background-color: royalblue;
-  width: 180px;
+  background-color: #007bff;
+  width: 175px;
   height: 10px;
   margin-top: -10px;
 }
 header p {
-  margin: 0 25px;
-  color: #ffc107;
+  margin: 0 20px;
+  color: #6c757d;
   font-size: 1rem;
   font-weight: lighter;
   text-align: left;
   align-self: flex-end;
+}
+
+.input-group {
+  margin: 1rem 0;
+}
+
+.current-weather,
+.forecast-weather {
+  padding: 1rem;
+}
+
+.forecast-title {
+  padding-left: 1rem;
 }
