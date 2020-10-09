@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Weather Channel</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="./index.html"
+        ><h1>My Weather <span>Channel</span></h1></a
+      >
+      <p>Plan ahead & check the weather!</p>
+    </header>
+    <main>
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Left Section -->
+          <div class="col-3 left-col bg-secondary">
+            <div class="search-zone left-up-col">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Type A City Here ... "
+                  aria-label="Type A City"
+                  aria-describedby="button-addon2"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    id="button-addon2"
+                  >
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="city-display down-up-col">
+              <ul class="list-group">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Right Section - One City Weather Displays -->
+          <div class="col-9 right-col bg-warning">
+            <!-- Current Weather -->
+            <div class="row current-weather">
+              <div class="row">
+                <div class="col"></div>
+              </div>
+
+              <div class="row">
+                <div class="col-6">.col-6</div>
+                <div class="col-6">.col-6</div>
+              </div>
+            </div>
+            <!-- Forecast Weather -->
+            <div class="row forecast-weather"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
