@@ -51,24 +51,35 @@
               </div>
             </div>
             <!-- City Lists -->
-            <div class="city-display left-down-col">
-              <ul class="list-group">
-                <button class="list-group-item">Toronto</button>
-              </ul>
+            <div class="city-display left-down-col list-group" id="list-group">
+              <!-- <button class="list-group-item" id="list-group-item"></button> -->
             </div>
           </div>
-          <!-- Right Section - One City Weather Displays -->
+          <!-- Right Section -->
           <div class="col-9 right-col bg-warning">
             <!-- Current Weather -->
             <div class="row-fluid current-weather">
               <div class="card border-secondary mb-2">
-                <div class="card-header">Header</div>
-                <div class="card-body text-secondary">
-                  <h5 class="card-title">Secondary card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+                <div class="card-header">
+                  <h2 id="city-title"></h2>
+                  <p id="current-day" class="mb-0"></p>
+                </div>
+
+                <div
+                  class="card-body text-secondary d-flex flex-wrap justify-content-between"
+                >
+                  <div class="d-flex">
+                    <h5 class="card-title">Temperature:</h5>
+                    <p class="card-text" id="current-temp"></p>
+                  </div>
+                  <div class="d-flex">
+                    <h5 class="card-title">Humidity:</h5>
+                    <p class="card-text" id="current-hum"></p>
+                  </div>
+                  <div class="d-flex">
+                    <h5 class="card-title">Wind Speed:</h5>
+                    <p class="card-text" id="wind-speed"></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -81,10 +92,7 @@
                 <div class="card-header next-date">Next Day 1</div>
                 <div class="card-body">
                   <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+                  <p class="card-text">Some quick example.</p>
                 </div>
               </div>
               <!-- Next Day 2 -->
@@ -92,10 +100,7 @@
                 <div class="card-header next-date">Next Day 2</div>
                 <div class="card-body">
                   <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+                  <p class="card-text">Some quick example.</p>
                 </div>
               </div>
               <!-- Next Day 3 -->
@@ -103,10 +108,7 @@
                 <div class="card-header next-date">Next Day 3</div>
                 <div class="card-body">
                   <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+                  <p class="card-text">Some quick example.</p>
                 </div>
               </div>
               <!-- Next Day 4 -->
@@ -114,10 +116,7 @@
                 <div class="card-header next-date">Next Day 4</div>
                 <div class="card-body">
                   <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+                  <p class="card-text">Some quick example.</p>
                 </div>
               </div>
               <!-- Next Day 5 -->
@@ -125,10 +124,7 @@
                 <div class="card-header next-date">Next Day 5</div>
                 <div class="card-body">
                   <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+                  <p class="card-text">Some quick example.</p>
                 </div>
               </div>
               <!-- End of Cards -->
