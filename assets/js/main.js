@@ -15,7 +15,11 @@ $("#button-addon2").on("click", function () {
         "&appid=a8e17bfcb12d79725964af1dd67c506a"
     )
       .then(function (response) {
-        return response.json();
+        if (response.ok) {
+          return response.json();
+        } else {
+          alert("Error: " + response.statusText);
+        }
       })
       .then(function (responseJsonReturned) {
         console.log(responseJsonReturned);
