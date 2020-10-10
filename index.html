@@ -28,9 +28,11 @@
         <div class="row">
           <!-- Left Section -->
           <div class="col-3 left-col bg-secondary">
+            <!-- Search Area -->
             <div class="search-zone left-up-col">
               <div class="input-group mb-3">
                 <input
+                  id="city-input"
                   type="text"
                   class="form-control"
                   placeholder="Search A City..."
@@ -48,21 +50,18 @@
                 </div>
               </div>
             </div>
-            <div class="city-display down-up-col">
+            <!-- City Lists -->
+            <div class="city-display left-down-col">
               <ul class="list-group">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                <button class="list-group-item">Toronto</button>
               </ul>
             </div>
           </div>
           <!-- Right Section - One City Weather Displays -->
           <div class="col-9 right-col bg-warning">
             <!-- Current Weather -->
-            <div class="row current-weather">
-              <div class="card border-secondary mb-3" style="max-width: 18rem">
+            <div class="row-fluid current-weather">
+              <div class="card border-secondary mb-2">
                 <div class="card-header">Header</div>
                 <div class="card-body text-secondary">
                   <h5 class="card-title">Secondary card title</h5>
@@ -74,14 +73,12 @@
               </div>
             </div>
             <!-- 5-Day Forecast Title -->
-            <div class="row forecast-title">5-Day Forecast</div>
+            <div class="row-fluid forecast-title">5-Day Forecast</div>
             <!-- Forecast Weather -->
-            <div class="row forecast-weather">
-              <div
-                class="card text-white bg-primary mb-3"
-                style="max-width: 18rem"
-              >
-                <div class="card-header">Header</div>
+            <div class="row-fluid forecast-weather d-flex">
+              <!-- Next Day 1 -->
+              <div class="col card text-white bg-primary" id="next-day-1">
+                <div class="card-header next-date">Next Day 1</div>
                 <div class="card-body">
                   <h5 class="card-title">Primary card title</h5>
                   <p class="card-text">
@@ -90,6 +87,51 @@
                   </p>
                 </div>
               </div>
+              <!-- Next Day 2 -->
+              <div class="col card text-white bg-primary" id="next-day-2">
+                <div class="card-header next-date">Next Day 2</div>
+                <div class="card-body">
+                  <h5 class="card-title">Primary card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+              <!-- Next Day 3 -->
+              <div class="col card text-white bg-primary" id="next-day-3">
+                <div class="card-header next-date">Next Day 3</div>
+                <div class="card-body">
+                  <h5 class="card-title">Primary card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+              <!-- Next Day 4 -->
+              <div class="col card text-white bg-primary" id="next-day-4">
+                <div class="card-header next-date">Next Day 4</div>
+                <div class="card-body">
+                  <h5 class="card-title">Primary card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+              <!-- Next Day 5 -->
+              <div class="col card text-white bg-primary" id="next-day-5">
+                <div class="card-header next-date">Next Day 5</div>
+                <div class="card-body">
+                  <h5 class="card-title">Primary card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+              <!-- End of Cards -->
             </div>
           </div>
         </div>

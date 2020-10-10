@@ -49,11 +49,15 @@ header p {
   margin: 1rem 0;
 }
 
-.current-weather,
-.forecast-weather {
-  padding: 1rem;
+.card {
+  margin: 1rem;
+}
+
+.next-date {
+  background-color: #007bff;
 }
 
 .forecast-title {
-  padding-left: 1rem;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
 }
