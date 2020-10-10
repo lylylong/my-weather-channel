@@ -2,6 +2,9 @@
   margin: 0;
   text-decoration: none;
 }
+body {
+  background-color: var(--darkgrey);
+}
 :root {
   --lightblue: rgb(103, 138, 241);
   --darkgrey: rgb(56, 56, 56);
@@ -60,4 +63,18 @@ header p {
 .forecast-title {
   margin-top: 1.5rem;
   margin-left: 1rem;
+}
+
+#hide {
+  display: none;
+}
+
+footer {
+  background-color: var(--darkgrey);
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  display: flex;
+  align-items: flex-end;
 }

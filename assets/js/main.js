@@ -2,9 +2,17 @@ $(document).ready(function () {
   //   let cityInput = "";
   //   let cityId = "";
 
+  $(".btn").one("click", function () {
+    setTimeout(function () {
+      let weatherDiv = document.getElementById("hide");
+      weatherDiv.removeAttribute("id");
+    }, 1000);
+  });
+
   // click the search button to get the city input
   $("#button-addon2").on("click", function () {
     console.log("Search button is clicked!");
+
     // get the input city name
     let cityInput = $(this).parents().siblings("#city-input").val();
     console.log("the input is " + cityInput);
@@ -77,6 +85,8 @@ $(document).ready(function () {
             .then(function (response2JsonReturned) {
               console.log(response2JsonReturned);
               console.log(response2JsonReturned.value);
+              let currentUvIndex = document.querySelector("#uv-index");
+              currentUvIndex.innerHTML = "&nbsp" + response2JsonReturned.value;
             });
         });
     }

@@ -27,7 +27,7 @@
       <div class="container-fluid">
         <div class="row">
           <!-- Left Section -->
-          <div class="col-3 left-col bg-secondary">
+          <div class="col left-col bg-secondary">
             <!-- Search Area -->
             <div class="search-zone left-up-col">
               <div class="input-group mb-3">
@@ -55,8 +55,9 @@
               <!-- <button class="list-group-item" id="list-group-item"></button> -->
             </div>
           </div>
+
           <!-- Right Section -->
-          <div class="col-9 right-col bg-warning">
+          <div class="col-9 right-col bg-warning" id="hide">
             <!-- Current Weather -->
             <div class="row-fluid current-weather">
               <div class="card border-secondary mb-2">
@@ -79,6 +80,10 @@
                   <div class="d-flex">
                     <h5 class="card-title">Wind Speed:</h5>
                     <p class="card-text" id="wind-speed"></p>
+                  </div>
+                  <div class="d-flex">
+                    <h5 class="card-title">UV Index:</h5>
+                    <p class="card-text" id="uv-index"></p>
                   </div>
                 </div>
               </div>
@@ -133,6 +138,9 @@
         </div>
       </div>
     </main>
+    <footer>
+      <p class="footer">☀️ Have a great day!</p>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="./assets/js/main.js"></script>
