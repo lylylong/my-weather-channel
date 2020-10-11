@@ -62,8 +62,8 @@
             <div class="row-fluid current-weather">
               <div class="card border-secondary mb-2">
                 <div class="card-header">
-                  <h2 id="city-title"></h2>
-                  <p id="current-day" class="mb-0"></p>
+                  <h2 id="city-title">City Name</h2>
+                  <p id="current-day" class="mb-0">Date</p>
                 </div>
 
                 <div
@@ -71,74 +71,37 @@
                 >
                   <div class="d-flex">
                     <h5 class="card-title">Temperature:</h5>
-                    <p class="card-text" id="current-temp"></p>
+                    <p class="card-text" id="current-temp">TBD</p>
                   </div>
                   <div class="d-flex">
                     <h5 class="card-title">Humidity:</h5>
-                    <p class="card-text" id="current-hum"></p>
+                    <p class="card-text" id="current-hum">TBD</p>
                   </div>
                   <div class="d-flex">
                     <h5 class="card-title">Wind Speed:</h5>
-                    <p class="card-text" id="wind-speed"></p>
+                    <p class="card-text" id="wind-speed">TBD</p>
                   </div>
                   <div class="d-flex">
                     <h5 class="card-title">UV Index:</h5>
-                    <p class="card-text" id="uv-index"></p>
+                    <p class="card-text" id="uv-index">TBD</p>
                   </div>
                 </div>
               </div>
             </div>
             <!-- 5-Day Forecast Title -->
-            <div class="row-fluid forecast-title">5-Day Forecast</div>
-            <!-- Forecast Weather -->
-            <div class="row-fluid forecast-weather d-flex">
-              <!-- Next Day 1 -->
-              <div class="col card text-white bg-primary" id="next-day-1">
-                <div class="card-header next-date">Next Day 1</div>
-                <div class="card-body">
-                  <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text">Some quick example.</p>
-                </div>
-              </div>
-              <!-- Next Day 2 -->
-              <div class="col card text-white bg-primary" id="next-day-2">
-                <div class="card-header next-date">Next Day 2</div>
-                <div class="card-body">
-                  <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text">Some quick example.</p>
-                </div>
-              </div>
-              <!-- Next Day 3 -->
-              <div class="col card text-white bg-primary" id="next-day-3">
-                <div class="card-header next-date">Next Day 3</div>
-                <div class="card-body">
-                  <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text">Some quick example.</p>
-                </div>
-              </div>
-              <!-- Next Day 4 -->
-              <div class="col card text-white bg-primary" id="next-day-4">
-                <div class="card-header next-date">Next Day 4</div>
-                <div class="card-body">
-                  <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text">Some quick example.</p>
-                </div>
-              </div>
-              <!-- Next Day 5 -->
-              <div class="col card text-white bg-primary" id="next-day-5">
-                <div class="card-header next-date">Next Day 5</div>
-                <div class="card-body">
-                  <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text">Some quick example.</p>
-                </div>
-              </div>
-              <!-- End of Cards -->
+            <div class="row-fluid forecast-title text-secondary">
+              Plan your trip ahead with the 5-day forecast
             </div>
+            <!-- Forecast Weather -->
+            <div
+              class="row-fluid forecast-weather d-flex"
+              id="forecast-warp"
+            ></div>
           </div>
         </div>
       </div>
     </main>
-    <footer>
+    <footer class="fixed-bottom">
       <p class="footer">☀️ Have a great day!</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

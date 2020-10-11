@@ -56,8 +56,10 @@ header p {
   margin: 1rem;
 }
 
-.next-date {
+.next-date,
+.forecast-details {
   background-color: #007bff;
+  padding: 5px 0;
 }
 
 .forecast-title {
@@ -77,4 +79,8 @@ footer {
   justify-content: center;
   display: flex;
   align-items: flex-end;
+}
+
+.city-display {
+  padding-bottom: 1rem;
 }
