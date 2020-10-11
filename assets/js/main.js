@@ -106,7 +106,21 @@ $(document).ready(function () {
             console.log(response2JsonReturned);
             console.log(response2JsonReturned.value);
             let currentUvIndex = document.querySelector("#uv-index");
-            currentUvIndex.innerHTML = "&nbsp" + response2JsonReturned.value;
+            currentUvIndex.innerHTML = response2JsonReturned.value;
+
+            if (response2JsonReturned.value < 3) {
+              currentUvIndex.classList.remove("bg-warning");
+              currentUvIndex.classList.remove("bg-danger");
+              currentUvIndex.classList.add("bg-success");
+            } else if (response2JsonReturned.value < 7) {
+              currentUvIndex.classList.remove("bg-success");
+              currentUvIndex.classList.remove("bg-danger");
+              currentUvIndex.classList.add("bg-warning");
+            } else {
+              currentUvIndex.classList.remove("bg-success");
+              currentUvIndex.classList.remove("bg-warning");
+              currentUvIndex.classList.add("bg-danger");
+            }
           });
 
         // fetch to get the forecast for future 5 days

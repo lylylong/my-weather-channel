@@ -84,3 +84,11 @@ footer {
 .city-display {
   padding-bottom: 1rem;
 }
+
+#uv-index {
+  margin-left: 8px;
+  padding: 0 8px;
+  color: white;
+  border-radius: 0.5em;
+  height: 25px;
+}
