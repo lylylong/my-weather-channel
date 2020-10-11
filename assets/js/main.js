@@ -1,6 +1,10 @@
+let arrayCity = JSON.parse(localStorage.getItem("arrayCity")) || [];
+
 $(document).ready(function () {
   //   let cityInput = "";
   //   let cityId = "";
+
+  //   arrayCity = localStorage.getItem("arrayCity");
 
   $(".btn").one("click", function () {
     setTimeout(function () {
@@ -37,37 +41,39 @@ $(document).ready(function () {
           console.log(cityId);
           let cityTitle = responseJsonReturned.name;
           console.log(cityTitle);
+
+          // get the current city name, date & info display
+          let cityHeader = document.querySelector("#city-title");
+          cityHeader.textContent = cityTitle;
+          let currentDay = document.querySelector("#current-day");
+          currentDay.textContent = moment().format("dddd, ll");
+          let currentTemp = document.querySelector("#current-temp");
+          currentTemp.innerHTML =
+            "&nbsp" + responseJsonReturned.main.temp + " °C";
+          let currentHum = document.querySelector("#current-hum");
+          currentHum.innerHTML =
+            "&nbsp" + responseJsonReturned.main.humidity + " %";
+          let currentWind = document.querySelector("#wind-speed");
+          currentWind.innerHTML =
+            "&nbsp" + responseJsonReturned.wind.speed + " m/s";
+
+          // if the search input before
+          if (arrayCity.includes(cityTitle)) {
+            return;
+          }
+
           // local storage the city id and city name
           localStorage.setItem(cityId, cityTitle);
+          arrayCity.push(cityTitle);
+          localStorage.setItem("arrayCity", JSON.stringify(arrayCity));
 
           let cityList = $("#list-group");
           let cityBtn = document.createElement("button");
           cityBtn.classList = "list-group-item";
-          $(cityBtn).val(localStorage.getItem(cityTitle));
+
           cityBtn.textContent = cityTitle;
 
           cityList.append(cityBtn);
-          //   cityBtn.innerHTML = localStorage.getItem("cityInput");
-          //   cityBtn.textContent = localStorage.getItem("cityInput");
-
-          // get the city name display
-          let cityHeader = document.querySelector("#city-title");
-          cityHeader.textContent = cityTitle;
-          // show current date
-          let currentDay = document.querySelector("#current-day");
-          currentDay.textContent = moment().format("dddd, ll");
-
-          let currentTemp = document.querySelector("#current-temp");
-          currentTemp.innerHTML =
-            "&nbsp" + responseJsonReturned.main.temp + " °C";
-
-          let currentHum = document.querySelector("#current-hum");
-          currentHum.innerHTML =
-            "&nbsp" + responseJsonReturned.main.humidity + " %";
-
-          let currentWind = document.querySelector("#wind-speed");
-          currentWind.innerHTML =
-            "&nbsp" + responseJsonReturned.wind.speed + " m/s";
 
           var lat = responseJsonReturned.coord.lat;
           var lon = responseJsonReturned.coord.lon;
@@ -96,6 +102,13 @@ $(document).ready(function () {
     // after search, reset the input
     $(this).parents().siblings("#city-input").val("");
   });
-
-  //   $("#list-group .list-group-item").val(localStorage.getItem("6167865"));
 });
+
+// initial
+for (let i = 0; i < arrayCity.length; i++) {
+  let cityList = $("#list-group");
+  let cityBtn = document.createElement("button");
+  cityBtn.classList = "list-group-item";
+  cityBtn.textContent = arrayCity[i];
+  cityList.append(cityBtn);
+}
