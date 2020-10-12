@@ -2,16 +2,17 @@
   margin: 0;
   text-decoration: none;
 }
+
 body {
   background-color: var(--darkgrey);
 }
+
 :root {
   --lightblue: rgb(103, 138, 241);
   --darkgrey: rgb(56, 56, 56);
   --light: rgb(165, 186, 250);
 }
 
-/* header settings */
 header {
   background-color: var(--darkgrey);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -20,6 +21,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 a h1 {
   color: white;
   display: inline-block;
@@ -28,9 +30,11 @@ a h1 {
   font-weight: 600;
   margin-bottom: 0;
 }
+
 h1 span {
   font-weight: lighter;
 }
+
 h1::after {
   content: " ";
   display: block;
@@ -39,6 +43,7 @@ h1::after {
   height: 10px;
   margin-top: -10px;
 }
+
 header p {
   margin: 0 20px;
   color: #6c757d;

@@ -1,5 +1,6 @@
+// get the city names stored in the array
 let arrayCity = JSON.parse(localStorage.getItem("arrayCity")) || [];
-
+// show the weather info after the first click
 $(".left-col").one("click", ".btn, .city-display", function () {
   setTimeout(function () {
     let weatherDiv = document.getElementById("hide");
@@ -8,36 +9,30 @@ $(".left-col").one("click", ".btn, .city-display", function () {
 });
 
 $(document).ready(function () {
-  //input search
-  // click the search button to get the city input
+  // input search, click the search button to get the city input then use it to fetch
   $("#button-addon2").on("click", function () {
+    // remove the previous forecasts
     for (i = 0; i < 5; i++) {
       document.querySelector(".forecast-divs")?.remove();
     }
-
-    console.log("Search button is clicked!");
-
     // get the input city name
     let cityInput = $(this).parents().siblings("#city-input").val();
     console.log("the input is " + cityInput);
-
+    // invoke the getCurrentWeather function
     getCurrentWeather(cityInput);
-
     // after search, reset the input
     $(this).parents().siblings("#city-input").val("");
   });
 
-  // stored city search
-  //   let cityStored = document.querySelector(".list-group-item");
+  // stored city search, click the city name then use it to fetch
   $(".list-group-item").on("click", function () {
+    // remove the previous forecasts
     for (i = 0; i < 5; i++) {
       document.querySelector(".forecast-divs")?.remove();
     }
-    console.log("this tab is clicked");
     let cityStored = $(this).text();
-    console.log(cityStored);
     cityInput = cityStored;
-
+    // invoke the getCurrentWeather function
     getCurrentWeather(cityInput);
   });
 
@@ -57,7 +52,6 @@ $(document).ready(function () {
       })
       .then(function (responseJsonReturned) {
         console.log(responseJsonReturned);
-        // get the city id
         let cityId = responseJsonReturned.id;
         console.log(cityId);
         let cityTitle = responseJsonReturned.name;
@@ -68,7 +62,6 @@ $(document).ready(function () {
         cityHeader.textContent = cityTitle;
         let currentDay = document.querySelector("#current-day");
         currentDay.textContent = moment().format("dddd, ll");
-
         let currentImg = document.createElement("img");
         currentImg.setAttribute(
           "src",
@@ -77,7 +70,6 @@ $(document).ready(function () {
             ".png"
         );
         currentDay.appendChild(currentImg);
-
         let currentTemp = document.querySelector("#current-temp");
         currentTemp.innerHTML =
           "&nbsp" + responseJsonReturned.main.temp + " °C";
@@ -88,9 +80,9 @@ $(document).ready(function () {
         currentWind.innerHTML =
           "&nbsp" + responseJsonReturned.wind.speed + " m/s";
 
+        // set the lat & lon for the second fetch, to get the uv index
         var lat = responseJsonReturned.coord.lat;
         var lon = responseJsonReturned.coord.lon;
-
         // fetch to get the uv index
         fetch(
           "http://api.openweathermap.org/data/2.5/uvi?lat=" +
@@ -107,7 +99,7 @@ $(document).ready(function () {
             console.log(response2JsonReturned.value);
             let currentUvIndex = document.querySelector("#uv-index");
             currentUvIndex.innerHTML = response2JsonReturned.value;
-
+            // set the colors for the uv index data, the color and change when the data change
             if (response2JsonReturned.value < 3) {
               currentUvIndex.classList.remove("bg-warning");
               currentUvIndex.classList.remove("bg-danger");
@@ -123,7 +115,7 @@ $(document).ready(function () {
             }
           });
 
-        // fetch to get the forecast for future 5 days
+        // fetch to get the forecast for future 5 days, the third fetch
         fetch(
           "http://api.openweathermap.org/data/2.5/forecast?q=" +
             cityInput +
@@ -137,12 +129,11 @@ $(document).ready(function () {
           .then(function (response3JsonReturned) {
             console.log(response3JsonReturned);
 
+            // use the third fetch data to display the 5-day forecasts
             for (let i = 0; i < response3JsonReturned.list.length; i++) {
               if (response3JsonReturned.list[i].dt_txt.includes("15:00:00")) {
                 let forecastWarp = document.querySelector(".forecast-weather");
-
                 let forecastDivs = document.createElement("div");
-
                 forecastDivs.classList =
                   "col card text-white bg-primary forecast-divs";
                 let forecastDivHeader = document.createElement("div");
@@ -150,7 +141,6 @@ $(document).ready(function () {
                 forecastDivHeader.textContent = response3JsonReturned.list[
                   i
                 ].dt_txt.split(" ")[0];
-
                 let forecastImgs = document.createElement("img");
                 forecastImgs.setAttribute(
                   "src",
@@ -159,10 +149,8 @@ $(document).ready(function () {
                     ".png"
                 );
                 forecastDivHeader.appendChild(forecastImgs);
-
                 let forecastDivBody = document.createElement("div");
                 forecastDivBody.classList = "card-body forecast-details";
-
                 let forecastDivTemp = document.createElement("h6");
                 forecastDivTemp.classList = "card-title";
                 forecastDivTemp.textContent =
@@ -173,7 +161,6 @@ $(document).ready(function () {
                   "humidity: " +
                   response3JsonReturned.list[i].main.humidity +
                   " %";
-
                 forecastDivs.appendChild(forecastDivHeader);
                 forecastDivBody.appendChild(forecastDivTemp);
                 forecastDivBody.appendChild(forecastDivHum);
@@ -183,21 +170,18 @@ $(document).ready(function () {
             }
           });
 
-        // if the search input before
+        // if the input saved before, don't need to save again
         if (arrayCity.includes(cityTitle)) {
           return;
         }
 
-        // local storage the array and city names
+        // local storage - save city inputs to the array & create city list on the left panel
         arrayCity.push(cityTitle);
         localStorage.setItem("arrayCity", JSON.stringify(arrayCity));
-
         let cityList = $("#list-group");
         let cityBtn = document.createElement("button");
         cityBtn.classList = "list-group-item";
-
         cityBtn.textContent = cityTitle;
-
         cityList.append(cityBtn);
       });
   }
