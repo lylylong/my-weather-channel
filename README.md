@@ -35,6 +35,7 @@ This gif demonstrates the user experience:
 - Moment.js
 - HTML
 - CSS
+- Weather API
 
 ## Platform
 
