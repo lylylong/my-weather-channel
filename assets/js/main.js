@@ -85,7 +85,7 @@ $(document).ready(function () {
         var lon = responseJsonReturned.coord.lon;
         // fetch to get the uv index
         fetch(
-          "http://api.openweathermap.org/data/2.5/uvi?lat=" +
+          "https://api.openweathermap.org/data/2.5/uvi?lat=" +
             lat +
             "&lon=" +
             lon +
@@ -117,7 +117,7 @@ $(document).ready(function () {
 
         // fetch to get the forecast for future 5 days, the third fetch
         fetch(
-          "http://api.openweathermap.org/data/2.5/forecast?q=" +
+          "https://api.openweathermap.org/data/2.5/forecast?q=" +
             cityInput +
             "&appid=a8e17bfcb12d79725964af1dd67c506a&units=metric"
         )
