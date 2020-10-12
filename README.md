@@ -25,6 +25,7 @@ https://github.com/lylylong/my-weather-channel.git
 ## Screenshots
 
 This gif demonstrates the user experience:
+![Final gif](https://user-images.githubusercontent.com/70302749/95699611-ea9c7980-0c12-11eb-889f-b1506689cce5.gif)
 
 ## Built With
 
